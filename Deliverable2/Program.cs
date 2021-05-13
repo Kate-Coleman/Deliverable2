@@ -6,60 +6,77 @@ namespace Deliverable2
     {
         static void Main(string[] args)
         {
-            string mixedInput;
             string lowerInput;
+            var hello = true;
+            var sup = true;
+            var hellothere = true;
+
             do
             {
+                Console.WriteLine("Say something to the bot! Use the following commands: Hello, bye, sup, or hello there.\n");
+                lowerInput = Console.ReadLine().ToLower();
 
-                Console.WriteLine("Say something to the bot! Use the following commands: Hello, bye, sup, or hello there.");
-                mixedInput = Console.ReadLine();
-                lowerInput = mixedInput.ToLower();
 
-                if (lowerInput == "hello")
+                switch (lowerInput)
                 {
-                    Console.WriteLine("Hi good to see you");
+                    case "hello":
+
+                        if (hello)
+                        {
+                            Console.WriteLine("Hi good to see you\n");
+                            hello = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Say something else please.\n");
+                        }
+
+                        break;
+
+                    case "sup":
+
+                        if (sup)
+                        { 
+                            Console.WriteLine("I am good\n");
+                            sup = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Say something else please.\n");
+                        }
+
+                        break;
+
+                    case "hello there":
+
+                        if (hellothere)
+                        {
+                            Console.WriteLine("General Kenobi\n");
+                            sup = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Say something else please.\n");
+                        }
+
+                        break;
+
+                    case "bye":
+
+                        Console.WriteLine("Good Bye!\n");
+
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid greeting. Please try again!\n");
+                        break;
+
                 }
-
-                else if (lowerInput == "sup")
-                {
-                    Console.WriteLine("I am good");
-                }
-                else if (lowerInput == "hello there")
-                {
-                    Console.WriteLine("General Kenobi");
-                }
-                else if (lowerInput == "bye")
-                {
-                    Console.WriteLine("Good Bye!");
-                }
-            }
-
-            while (lowerInput != "bye");
-            /*
-                    switch (lowerInput)
-                    {
-                        case "hello":
-                            Console.WriteLine("Hi good to see you");
-                            break;
-
-                        case "sup":
-                            Console.WriteLine("I am good");
-                            break;
-
-                        case "hello there":
-                            Console.WriteLine("General Kenobi");
-                            break;
-
-                        case "bye":
-                            Console.WriteLine("Good Bye!");
-                            break;
+            } while (lowerInput != "bye");
 
 
-                    */
         }
     }
 }
-            
-
 
 
